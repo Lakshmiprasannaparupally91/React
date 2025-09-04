@@ -1,7 +1,15 @@
+import { useDispatch } from "react-redux";
 import { RES_LOGO } from "../utilis/constants";
+import { addItem } from "../utilis/cartSlice";
+
 const ItemsList = ({items}) => {
-    console.log(items)
-    return(
+
+  const dispatch = useDispatch();
+const handleAddItem = (item) => {
+dispatch(addItem(item));
+}
+
+  return(
          <div>
       {items.map((item) => (
         <div
@@ -24,7 +32,7 @@ const ItemsList = ({items}) => {
           <div className="w-3/12 p-4">
             <div className="absolute">
               <button
-                className="p-2 mx-16 rounded-lg bg-black text-white shadow-lg"
+                className="p-2 mx-16 rounded-lg bg-black text-white shadow-lg cursor-pointer"
                 onClick={() => handleAddItem(item)}
               >
                 Add +

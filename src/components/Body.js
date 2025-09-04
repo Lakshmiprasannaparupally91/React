@@ -20,7 +20,6 @@ const Body = () => {
 const fetchData = async () => {
  const data = await fetch("https://swiggy-api-4c740.web.app/swiggy-api.json");
  const json = await data.json();
- console.log(json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants)
 setListOfRestro(json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
 setFilterRestro(json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
 
